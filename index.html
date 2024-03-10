@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Book Borrowing System</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+#background-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    object-fit: auto;
+    object-position: center;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+        /* Add custom styles for font families */
+        h1, h2 {
+            font-family: 'Lato', sans-serif;
+        }
+
+        body, p, button, input, select {
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        /* Add styles for the dropdown list */
+        select {
+            padding: 8px;
+            margin-right: 10px;
+            width: auto; /* Adjusted the width */
+        }
+
+        /* Add styles for the move status message */
+        #moveStatus {
+            color: green;
+            margin-top: 10px;
+        }
+
+        /* Add styles for the login buttons and icons */
+        #login-screen button {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        #login-screen img {
+            max-width: 24px; /* Adjust the size of the icon as needed */
+            margin-right: 10px; /* Add spacing between the icon and text */
+        }
+
+        /* Your existing styles */
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+        }
+
+        header {
+            background: linear-gradient(to bottom, #5d8aa8, #fff);
+            color: #333;
+            text-align: center;
+            padding: 1em;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .button-container {
+            text-align: left;
+        }
+
+        .back-button {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            width: auto;
+            margin-right: 10px;
+        }
+
+        input,
+        button {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        button {
+            background: linear-gradient(to bottom, #4a6da7, #2e4463);
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .book-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .book-item {
+            border: 1px solid #ddd;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .available {
+            color: green;
+        }
+
+        .unavailable {
+            color: red;
+        }
+
+        .reserved {
+            color: orange;
+        }
+
+        .returned-button,
+        .approve-button {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+            margin-right: 5px; /* Add this line to add margin between buttons */
+        }
+
+        .small-dropdown {
+            padding: 5px;
+            margin-right: 10px;
+            width: auto;
+        }
+
+        .move-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end; /* Align items to the right */
+        }
+
+        /* Add these styles for the move container and returned button */
+        .move-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        /* Add styles for the returned button */
+        .returned-button {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Library Book Borrowing System</h1>
+    </header>
+
+    <div class="container">
+        <div class="button-container">
+            <button id="backButton" class="back-button" onclick="showLoginScreen()" style="display: none;">Back</button>
+        </div>
+
+        <div id="login-screen">
+            <h2>Login</h2>
+<button onclick="showBorrowerScreen()">
+    <img src="images/student.png" alt="Student Icon"> Borrower
+</button>
+
+<button onclick="showLibrarianScreen()">
+    <img src="images/librarian.png" alt="Librarian Icon"> Librarian
+</button>
+
+<img id="background-img" src="images/library.jpg" alt="Background Image">        </div>
+  
+        <div id="borrower-screen" style="display: none;">
+            <h2>Search for Books</h2>
+            <input type="text" id="searchInput" placeholder="Enter keywords" oninput="searchBooks()">
+            <h2 id="allBooksHeading">All Books</h2>
+            <p id="reservationStatus"></p>
+            <ul class="book-list" id="bookList"></ul>
+            <p id="moveStatus"></p>
+        </div>
+
+        <div id="librarian-screen" style="display: none;">
+            <h2>Reservation Requests</h2>
+            <ul class="book-list" id="reservationList"></ul>
+            <h2>Book Inventory</h2>
+            <ul class="book-list" id="librarian-book-inventory"></ul>
+        </div>
+
+        <script src="scripts.js"></script>
+        
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+

@@ -1,0 +1,129 @@
+#login-screen button {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the content horizontally */
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px; /* Adjust the font size as needed */
+}
+
+#login-screen img {
+    max-width: 30px; /* Adjust the size of the icon as needed */
+    margin-right: 10px; /* Add spacing between the icon and text */
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+}
+
+header {
+    background: linear-gradient(to bottom, #5d8aa8, #fff);
+    color: #333;
+    text-align: center;
+    padding: 1em;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.button-container {
+    text-align: left;
+}
+
+.back-button {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: auto;
+    margin-right: 10px;
+}
+
+input,
+button {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+button {
+    background: linear-gradient(to bottom, #4a6da7, #2e4463);
+    color: #fff;
+    cursor: pointer;
+}
+
+.book-list {
+    list-style: none;
+    padding: 0;
+}
+
+.book-item {
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.available {
+    color: green;
+}
+
+.unavailable {
+    color: red;
+}
+
+.reserved {
+    color: orange;
+}
+
+.returned-button,
+.approve-button {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 5px; /* Add this line to add margin between buttons */
+}
+
+.small-dropdown {
+    padding: 5px;
+    margin-right: 10px;
+    width: auto;
+}
+
+.move-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align items to the right */
+}
+
+/* Add these styles for the move container and returned button */
+.move-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Add styles for the returned button */
+.returned-button {
+    margin-right: 5px;
+}
